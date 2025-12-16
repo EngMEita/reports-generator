@@ -1,0 +1,44 @@
+{
+    "name": "meita/reports-generator",
+    "description": "Dynamic, storable report generator for Laravel with reusable definitions and runtime parameters.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eng. Mohamed A. Eita",
+            "email": "maa1987@hotmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0 || ^11.0",
+        "illuminate/database": "^10.0 || ^11.0",
+        "illuminate/console": "^10.0 || ^11.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0 || ^9.0",
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Meita\\\\ReportsGenerator\\\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Meita\\\\ReportsGenerator\\\\ReportsGeneratorServiceProvider"
+            ],
+            "aliases": {
+                "ReportsGenerator": "Meita\\\\ReportsGenerator\\\\Facades\\\\ReportsGenerator"
+            }
+        }
+    },
+    "suggest": {
+        "maatwebsite/excel": "Excel export/download support",
+        "dompdf/dompdf": "PDF export support",
+        "phpoffice/phpword": "Word DOCX export support"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
