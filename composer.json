@@ -13,7 +13,10 @@
         "php": "^8.1",
         "illuminate/support": "^10.0 || ^11.0",
         "illuminate/database": "^10.0 || ^11.0",
-        "illuminate/console": "^10.0 || ^11.0"
+        "illuminate/console": "^10.0 || ^11.0",
+        "maatwebsite/excel": "^3.1",
+        "dompdf/dompdf": "^2.0",
+        "phpoffice/phpword": "^1.1"
     },
     "require-dev": {
         "orchestra/testbench": "^8.0 || ^9.0",
@@ -34,11 +37,17 @@
             }
         }
     },
-    "suggest": {
-        "maatwebsite/excel": "Excel export/download support",
-        "dompdf/dompdf": "PDF export support",
-        "phpoffice/phpword": "Word DOCX export support"
-    },
+    "keywords": [
+        "laravel",
+        "reports",
+        "reporting",
+        "generator",
+        "datatables",
+        "excel",
+        "pdf",
+        "word",
+        "export"
+    ],
     "minimum-stability": "stable",
     "prefer-stable": true
 }

@@ -12,7 +12,7 @@ Dynamic report generator for Laravel that stores report definitions (SQL + filte
 - Optional pagination (wraps the query with count + limit/offset).
 - CLI command `php artisan reports:run` for quick checks/exports.
 - Blade directive `@report('slug', [...])` returns JSON for quick embedding.
-- Export helpers: CSV (built-in), print/HTML table, DataTables-ready array. Optional Excel/PDF/Word if the suggested packages are installed.
+- Export helpers: CSV, print/HTML table, DataTables-ready array, Excel/PDF/Word (bundled).
 - Extra formats: JSON:API payload, XML payload; styling options for Excel/PDF/Word exports (headers, colors, merged cells).
 - Configurable table name, connection, cache store, and TTL.
 
@@ -144,16 +144,15 @@ php artisan reports:run employees-by-branch --params="status:active,branch_id:2"
 - `--format=json` prints JSON.
 
 ## Exports (CSV / HTML / DataTables / Excel / PDF / Word / Print)
-- Built-in (no extra packages):
+- كل التنسيقات مدمجة مع الباكچ:
   - CSV: `$result->toCsv()` returns string.
   - HTML table / print: `$result->toHtmlTable()` returns a `<table>` string.
   - DataTables-ready array: `$result->toDataTables()` returns `data`, `recordsTotal`, `recordsFiltered`, `meta`.
   - JSON:API: `$result->toJsonApi('employee')` returns JSON:API-compliant array.
   - XML: `$result->toXml('report', 'row')` returns an XML string.
-- Optional (install first):
-  - Excel: `composer require maatwebsite/excel`
-  - PDF: `composer require dompdf/dompdf`
-  - Word: `composer require phpoffice/phpword`
+  - Excel: `$result->exporter()->toExcel('employees.xlsx', [...options])`
+  - PDF: `$result->exporter()->toPdf('Title', $path = null, [...options])`
+  - Word: `$result->exporter()->toWord('Title', $path = null, [...options])`
 
 ### Examples
 ```php
