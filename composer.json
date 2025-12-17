@@ -24,16 +24,16 @@
     },
     "autoload": {
         "psr-4": {
-            "Meita\\\\ReportsGenerator\\\\": "src/"
+            "Meita\\ReportsGenerator\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Meita\\\\ReportsGenerator\\\\ReportsGeneratorServiceProvider"
+                "Meita\\ReportsGenerator\\ReportsGeneratorServiceProvider"
             ],
             "aliases": {
-                "ReportsGenerator": "Meita\\\\ReportsGenerator\\\\Facades\\\\ReportsGenerator"
+                "ReportsGenerator": "Meita\\ReportsGenerator\\Facades\\ReportsGenerator"
             }
         }
     },
